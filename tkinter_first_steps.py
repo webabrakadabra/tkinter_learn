@@ -3,17 +3,23 @@
 from tkinter import filedialog
 from tkinter import *
 import pyautogui
-
+x = ''
+x2 = ''
 def insert():
 	pyautogui.hotkey('ctrl', 'v')
 	txt1.delete(0, 'end')
+
     
 def browse_button():
     filename = filedialog.askdirectory()
     txt2.delete(0, 'end')
     txt2.insert(0, filename)
+    # ~ x2 = txt2.get()
     # ~ print(filename)
     # ~ return filename
+    
+def download():
+	pass
 	
 window = Tk()
 window.title("Текст0")
@@ -23,7 +29,7 @@ lb2 = Label(window, text="Виберіть директорію для збер�
 lb1.grid(column=0, row=0, padx=(10, 0))
 lb2.grid(column=0, row=2, padx=(10, 0))
 
-btn1 = Button(window, text="Завантажити", width=40)
+btn1 = Button(window, text="Завантажити", width=40, command=download)
 btn2 = Button(window, text="Вставити", command=insert)
 btn3 = Button(window, text="Вибрати", command=browse_button)
 btn1.grid(column=0, row=4)
@@ -31,12 +37,9 @@ btn2.grid(column=2, row=1)
 btn3.grid(column=2, row=3)
 
 txt1 = Entry(window, width=51)
-
 txt2 = Entry(window, width=51)
 txt1.grid(column=0, row=1, padx=(10, 10))
 txt2.grid(column=0, row=3, padx=(10, 10), pady=(0, 10))
-
-
 
 window.mainloop()
 
