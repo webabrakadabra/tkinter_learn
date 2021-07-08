@@ -6,7 +6,8 @@ import pyautogui
 
 def insert():
 	pyautogui.hotkey('ctrl', 'v')
-	
+	txt1.delete(0, 'end')
+    
 def browse_button():
     filename = filedialog.askdirectory()
     txt2.delete(0, 'end')
