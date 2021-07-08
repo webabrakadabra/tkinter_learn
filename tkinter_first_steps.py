@@ -7,19 +7,24 @@ x = ''
 x2 = ''
 def insert():
 	pyautogui.hotkey('ctrl', 'v')
+	global x
+	x = txt1.get()
 	txt1.delete(0, 'end')
+	
 
     
 def browse_button():
     filename = filedialog.askdirectory()
     txt2.delete(0, 'end')
     txt2.insert(0, filename)
-    # ~ x2 = txt2.get()
+    global x2
+    x2 = txt2.get()
     # ~ print(filename)
     # ~ return filename
     
 def download():
-	pass
+	print(x)
+	print(x2)
 	
 window = Tk()
 window.title("Текст0")
