@@ -3,29 +3,25 @@
 from tkinter import filedialog
 from tkinter import *
 import pyautogui
-x = ''
-x2 = ''
-def insert():
-	pyautogui.hotkey('ctrl', 'v')
-	global x
-	x = txt1.get()
-	txt1.delete(0, 'end')
-	
 
-    
+global x
+global x2
+
+def insert():
+    pyautogui.hotkey('ctrl', 'v')
+    txt1.delete(0, 'end')
+
 def browse_button():
     filename = filedialog.askdirectory()
     txt2.delete(0, 'end')
     txt2.insert(0, filename)
-    global x2
-    x2 = txt2.get()
-    # ~ print(filename)
-    # ~ return filename
     
 def download():
-	print(x)
-	print(x2)
-	
+    x = txt1.get()
+    x2 = txt2.get()
+    print(x)
+    print(x2)
+
 window = Tk()
 window.title("Текст0")
 window.geometry("540x200")
